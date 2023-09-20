@@ -1,0 +1,207 @@
+---
+- name: "3.1.1 | PATCH | Ensure 'Default cookies setting' is set to 'Enabled: Keep cookies for the duration of the session'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: DefaultCookiesSetting
+      data: 4
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.1.1
+
+- name: "3.1.2 | PATCH | Ensure 'Default geolocation setting' is set to 'Enabled: Do not allow any site to track the users' physical location'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: DefaultGeolocationSetting
+      data: 2
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.1.1
+
+- name: "3.2.1 | PATCH | Ensure 'Enable Google Cast' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: EnableMediaRouter
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.2.1
+
+- name: "3.3 | PATCH | Ensure 'Allow websites to query for available payment methods' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: PaymentMethodQueryEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.3
+
+- name: "3.4 | PATCH | Ensure 'Block third party cookies' is set to 'Enabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: BlockThirdPartyCookies
+      data: 1
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.4
+
+- name: "3.5 | PATCH | Ensure 'Browser sign in settings' is set to 'Enabled: Disabled browser sign-in'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: BrowserSignin
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.5
+
+
+- name: "3.6 | PATCH | Ensure 'Control how Chrome Cleanup reports data to Google' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: ChromeCleanupReportingEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.6
+
+- name: "3.7 | PATCH | Ensure 'Disable synchronization of data with Google' is set to 'Enabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: SyncDisabled
+      data: 1
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.7
+
+- name: "3.8 | PATCH | Ensure 'Enable alternate error pages' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: AlternateErrorPagesEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.8
+
+- name: "3.9 | PATCH | Ensure 'Enable deleting browser and download history' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: AllowDeletingBrowserHistory
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.9
+
+- name: "3.10 | PATCH | Ensure 'Enable network prediction' is set to 'Enabled: Do not predict actions on any network connection'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: NetworkPredictionOptions
+      data: 2
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.10
+
+- name: "3.11 | PATCH | Ensure 'Enable or disable spell checking web service' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: SpellCheckServiceEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.11
+
+- name: "3.12 | PATCH | Ensure 'Enable reporting of usage and crash-related data' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: MetricsReportingEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.12
+
+- name: "3.13 | PATCH | Ensure 'Enable Safe Browsing for trusted sources' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: SafeBrowsingForTrustedSourcesEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.13
+
+- name: "3.14 | PATCH | Ensure 'Enable search suggestions' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: SearchSuggestEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.14
+
+- name: "3.15 | PATCH | Ensure 'Enable Translate' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: TranslateEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.15
+
+- name: "3.16 | PATCH | Ensure 'Enable URL-keyed anonymized data collection' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: UrlKeyedAnonymizedDataCollectionEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_3.16
+
+

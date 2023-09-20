@@ -1,0 +1,156 @@
+---
+- name: "4.1.1  | PATCH | Ensure 'Allow or deny screen capture' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: ScreenCaptureAllowed
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.1.1
+
+- name: "4.2.1  | PATCH | Ensure 'Control use of the Serial API' is set to 'Enable: Do not allow any site to request access to serial ports via the Serial API'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: DefaultSerialGuardSetting
+      data: 2
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.2.1
+
+- name: "4.2.2  | PATCH | Ensure 'Default Sensors Setting' is set to 'Enabled: Do not allow any site to access sensors'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: DefaultSensorsSetting
+      data: 2
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.2.2
+
+- name: "4.3.1  | PATCH | Ensure 'Enable submission of documents to Google Cloud print' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: CloudPrintSubmitEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.3.1
+
+- name: "4.4  | PATCH | Ensure 'Allow invocation of file selection dialogs' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: AllowFileSelectionDialogs
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.4
+
+- name: "4.5  | PATCH | Ensure 'Allow or deny audio capture' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: AudioCaptureAllowed
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.5
+
+- name: "4.6  | PATCH | Ensure 'Allow or deny video capture' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: VideoCaptureAllowed
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.6
+
+- name: "4.7  | PATCH | Ensure 'Allow user feedback' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: UserFeedbackAllowed
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.7
+
+- name: "4.8  | PATCH | Ensure 'Controls the mode of DNS-over-HTTPS' is set to 'Enabled: secure'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: DnsOverHttpsMode
+      data: 'secure'
+      type: string
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.8
+
+- name: "4.9  | PATCH | Ensure 'Enable AutoFill for addresses' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: AutofillAddressEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.9
+
+- name: "4.10  | PATCH | Ensure 'Enable AutoFill for credit cards' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: AutofillCreditCardEnabled
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.10
+
+- name: "4.11  | PATCH | Ensure 'Import saved passwords from default browser on first run' is set to 'Disabled'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: ImportSavedPasswords
+      data: 0
+      type: dword
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.11
+
+- name: "4.12  | PATCH | Ensure 'List of types that should be excluded from synchronization' is set to 'Enabled: passwords'"
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Google\Chrome
+      name: SyncTypesListDisabled
+      data: 'passwords'
+      type: string
+  when:
+      - win19cis_rule_9_1_1
+  tags:
+      - level1
+      - rule_4.12
